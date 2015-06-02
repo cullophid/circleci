@@ -1,0 +1,14 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - curl https://sdk.cloud.google.com | bash
+    - exec -l $SHELL
+  override:
+    - docker build -t cullophid/circleTest .
+
+test:
+  override:
+    - docker run cullophid/circleTest;
