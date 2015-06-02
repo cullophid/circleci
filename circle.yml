@@ -1,6 +1,9 @@
 machine:
   services:
     - docker
+  environment:
+    - PATH: $HOME/google-cloud-sdk/bin:$PATH
+    - $GCLOUD: $HOME/google-cloud-sdk/bin
 
 dependencies:
   pre:
@@ -8,7 +11,7 @@ dependencies:
     - curl  -O https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip
     - unzip google-cloud-sdk.zip
     - ./google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash-completion=true --rc-path=.bashrc --disable-installation-options
-    - export PATH=$HOME/google-cloud-sdk/bin:$PATH
+    - $GCLOUD/gcloud
     - gcloud
   override:
     - docker build -t cullophid/circleci .
