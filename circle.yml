@@ -4,8 +4,10 @@ machine:
 
 dependencies:
   pre:
-    - curl https://sdk.cloud.google.com | bash
-    - exec -l $SHELL
+    - pwd
+    - curl  -O https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip
+    - unzip google-cloud-sdk.zip
+    - sh google-cloud-sdk/install.sh
   override:
     - docker build -t cullophid/circleTest .
 
