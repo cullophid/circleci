@@ -7,7 +7,7 @@ dependencies:
     - pwd
     - curl  -O https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.zip
     - unzip google-cloud-sdk.zip
-    - ./google-cloud-sdk/install.sh --usage-reporting=true --path-update=false --bash-completion=true  --disable-installation-options
+    - ./google-cloud-sdk/install.sh --usage-reporting=true --path-update=true --bash-completion=true --rc-path=.bashrc --disable-installation-options
   override:
     - docker build -t cullophid/circleTest .
 
