@@ -2,7 +2,6 @@ machine:
   services:
     - docker
   environment:
-    - PATH: $HOME/google-cloud-sdk/bin:$PATH
     - $GCLOUD: $HOME/google-cloud-sdk/bin
 
 dependencies:
